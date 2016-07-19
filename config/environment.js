@@ -20,6 +20,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.APP.API_URL = 'http://localhost:4000';
     ENV.contentSecurityPolicy = {
       'default-src': "'none'",
       'script-src': "'self'",
@@ -44,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.API_URL = process.env.API_URL
   }
 
   return ENV;
